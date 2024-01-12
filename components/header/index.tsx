@@ -1,31 +1,45 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { ChangeEventHandler, useEffect, useState } from "react";
+import useTranslate from "@/hooks/useTranslate";
+import i18n from "i18next";
 
 const Header = () => {
+  const { t, changeLanguage, currentLanguage } = useTranslate();
   const [isShowMobileHeader, setisShowMobileHeader] = useState(false);
 
   const links = [
     {
-      text: "home",
+      text: t("home"),
       to: "/",
     },
     {
-      text: "works",
+      text: t("works"),
       to: "/works",
     },
     {
-      text: "about-me",
+      text: t("about-me"),
       to: "/about-me",
     },
     {
-      text: "contacts",
+      text: t("contacts"),
       to: "/contacts",
     },
   ];
 
+  useEffect(() => {
+    i18n.changeLanguage("en");
+    console.log("currentLanguage", currentLanguage());
+  }, []);
+
   const toggleMenu = () => setisShowMobileHeader((prev) => !prev);
+
+  const changeLang: ChangeEventHandler<HTMLSelectElement> = (event) => {
+    // changeLanguage(event.target.value);
+    i18n.changeLanguage(event.target.value);
+    console.log("event", event.target.value);
+  };
 
   return (
     <header className="bg-transparent p-4 md:flex md:flex-row md:justify-between">
@@ -84,11 +98,12 @@ const Header = () => {
             className="w-20 bg-transparent text-thirdinary focus:border-none focus:outline-none"
             name="languages"
             id="languages"
+            onChange={changeLang}
           >
-            <option className="text-secondary" value="english">
+            <option className="text-secondary" value="en">
               English
             </option>
-            <option className="text-secondary" value="persian">
+            <option className="text-secondary" value="fa">
               فارسی
             </option>
           </select>
