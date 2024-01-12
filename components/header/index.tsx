@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { ChangeEventHandler, useEffect, useState } from "react";
 import useTranslate from "@/hooks/useTranslate";
-import i18n from "i18next";
+import { Languages } from "@/types/globals";
+import Cookies from "@/services/cookies";
 
 const Header = () => {
   const { t, changeLanguage, currentLanguage } = useTranslate();
@@ -28,21 +29,21 @@ const Header = () => {
     },
   ];
 
-  useEffect(() => {
-    i18n.changeLanguage("en");
-    console.log("currentLanguage", currentLanguage());
-  }, []);
-
   const toggleMenu = () => setisShowMobileHeader((prev) => !prev);
 
-  const changeLang: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    // changeLanguage(event.target.value);
-    i18n.changeLanguage(event.target.value);
-    console.log("event", event.target.value);
+  const changeLng: ChangeEventHandler<HTMLSelectElement> = (event) => {
+    changeLanguage(event.target.value as Languages);
   };
 
+  useEffect(() => {
+    console.log(
+      'Cookies.get("currentLanguage") as Languages',
+      Cookies.get("currentLanguage") as Languages
+    );
+  }, []);
+
   return (
-    <header className="bg-transparent p-4 md:flex md:flex-row md:justify-between">
+    <header className="container bg-transparent pt-8 px-44 md:flex md:flex-row md:justify-between">
       <div className="container mx-auto flex justify-between items-center z-40">
         <div className="flex flex-row">
           <Image
@@ -88,17 +89,18 @@ const Header = () => {
             <Link
               key={text}
               href={to}
-              className="mb-8 md:mb-auto md:ml-8 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary"
+              className="mb-8 md:mb-auto md:mr-4 md:ml-4 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary"
             >
               <span className="text-primary">#</span>
               {text}
             </Link>
           ))}
           <select
-            className="w-20 bg-transparent text-thirdinary focus:border-none focus:outline-none"
+            className="w-20 md:mr-4 md:ml-4 bg-transparent text-thirdinary focus:border-none focus:outline-none"
             name="languages"
             id="languages"
-            onChange={changeLang}
+            onChange={changeLng}
+            value={Cookies.get("currentLanguage") as Languages}
           >
             <option className="text-secondary" value="en">
               English
