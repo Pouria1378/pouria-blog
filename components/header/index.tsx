@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="container bg-transparent pt-4 md:pt-8 md:flex md:flex-row md:justify-between">
+    <header className="container z-50 bg-secondary sticky top-0 pt-2 md:pt-5 md:pb-2 md:flex md:flex-row md:justify-between">
       <div className="container mx-auto flex justify-between items-center z-40">
         <div className="flex flex-row">
           <Image
@@ -77,7 +77,7 @@ const Header = () => {
           isShowMobileHeader ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col md:flex-row m-auto mb-auto">
+        <div className="flex flex-col md:flex-row m-auto mb-auto z-50">
           {links.map(({ text, to }: { text: string; to: string }) => (
             <Link
               key={text}

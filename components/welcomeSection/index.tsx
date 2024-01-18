@@ -7,7 +7,7 @@ const WelcomeSection = () => {
   const { t } = useTranslate();
 
   return (
-    <div className="container flex flex-col md:flex-row justify-between">
+    <div className="container z-10 flex flex-col md:flex-row justify-between">
       <div className="flex flex-col justify-center">
         <h1 className="text-3xl font-semibold ">
           <span>{t("Pouria is a") + " "}</span>
