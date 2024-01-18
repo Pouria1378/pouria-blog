@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { ChangeEventHandler, useEffect, useState } from "react";
+import React, { ChangeEventHandler, useState } from "react";
 import useTranslate from "@/hooks/useTranslate";
 import { Languages } from "@/types/globals";
 import Cookies from "@/services/cookies";
 
 const Header = () => {
-  const { t, changeLanguage, currentLanguage } = useTranslate();
+  const { t, changeLanguage } = useTranslate();
   const [isShowMobileHeader, setisShowMobileHeader] = useState(false);
 
   const links = [
@@ -35,15 +35,8 @@ const Header = () => {
     changeLanguage(event.target.value as Languages);
   };
 
-  useEffect(() => {
-    console.log(
-      'Cookies.get("currentLanguage") as Languages',
-      Cookies.get("currentLanguage") as Languages
-    );
-  }, []);
-
   return (
-    <header className="container bg-transparent pt-8 px-44 md:flex md:flex-row md:justify-between">
+    <header className="container bg-transparent pt-4 md:pt-8 px-4 md:px-44 md:flex md:flex-row md:justify-between">
       <div className="container mx-auto flex justify-between items-center z-40">
         <div className="flex flex-row">
           <Image
@@ -58,7 +51,7 @@ const Header = () => {
         <div>
           <button className="relative md:hidden" onClick={toggleMenu}>
             <div className="relative flex overflow-hidden items-center justify-center w-[50px] h-[50px] transform transition-all duration-200">
-              <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
+              <div className="flex flex-col justify-between w-8 h-5 transform transition-all duration-300 origin-center overflow-hidden">
                 <div
                   className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${
                     isShowMobileHeader ? "rotate-[42deg]" : ""
@@ -80,11 +73,11 @@ const Header = () => {
         </div>
       </div>
       <nav
-        className={`bg-secondary flex fixed md:relative md:bottom-auto md:left-auto md:right-auto md:top-auto md:p-0 bottom-0 left-0 right-0 top-20 px-6 pb-6 pt-4 transform transition-transform duration-500 ease-in-out  md:translate-x-0 ${
+        className={`bg-secondary flex fixed md:relative md:bottom-auto md:left-auto md:right-auto md:top-auto md:p-0 bottom-0 left-0 right-0 top-14 px-6 pb-6 pt-4 transform transition-transform duration-500 ease-in-out  md:translate-x-0 ${
           isShowMobileHeader ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col md:flex-row mr-auto mb-auto">
+        <div className="flex flex-col md:flex-row m-auto mb-auto">
           {links.map(({ text, to }: { text: string; to: string }) => (
             <Link
               key={text}
