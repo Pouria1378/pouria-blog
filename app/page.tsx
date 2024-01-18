@@ -1,5 +1,5 @@
-import Image from "next/image";
+import WelcomeSection from "@/components/welcomeSection";
 
 export default function Home() {
-  return <div>empty page</div>;
+  return <WelcomeSection />;
 }

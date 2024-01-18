@@ -5,6 +5,11 @@
 body {
   background-color: #282C33;
   min-height: 100vh;
+  color: white;
+}
+
+button {
+  color: white;
 }
 
 /* reset css */
@@ -24,8 +29,8 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  /* font-size: 100%; */
+  /* font: inherit; */
   vertical-align: baseline;
 }
 
@@ -353,15 +358,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-html,
-button,
-input,
-select,
-textarea {
-  color: #222;
-}
-
 
 ::-moz-selection {
   background: #b3d4fc;

@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="container bg-transparent pt-4 md:pt-8 px-4 md:px-44 md:flex md:flex-row md:justify-between">
+    <header className="container bg-transparent pt-4 md:pt-8 md:flex md:flex-row md:justify-between">
       <div className="container mx-auto flex justify-between items-center z-40">
         <div className="flex flex-row">
           <Image
