@@ -21,8 +21,8 @@ module.exports = {
     lngs: ["en", "fa"], // Add your supported languages here
     defaultLng: "en",
     resource: {
-      loadPath: "hooks/useTranslate/{{lng}}/{{ns}}.json",
-      savePath: "hooks/useTranslate/{{lng}}/{{ns}}.json",
+      loadPath: "app/i18n/locales/{{lng}}/{{ns}}.json",
+      savePath: "app/i18n/locales/{{lng}}/{{ns}}.json",
     },
   },
 };

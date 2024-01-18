@@ -1,11 +1,8 @@
-"use client";
+"use server";
 import React from "react";
-import useTranslate from "@/hooks/useTranslate";
 import Image from "next/image";
 
-const WelcomeSection = () => {
-  const { t } = useTranslate();
-
+const WelcomeSection = ({ t }: { t: Function }) => {
   return (
     <div className="container z-10 flex flex-col md:flex-row justify-between">
       <div className="flex flex-col justify-center">
