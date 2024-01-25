@@ -1,5 +1,7 @@
 import WelcomeSection from "@/components/welcomeSection";
 import { useTranslation } from "../i18n";
+import { Fragment } from "react";
+import EldersWord from "@/components/eldersWord";
 
 export default async function Home({
   params: { lng },
@@ -7,5 +9,10 @@ export default async function Home({
   params: { lng: string };
 }) {
   const { t } = await useTranslation(lng);
-  return <WelcomeSection t={t} />;
+  return (
+    <Fragment>
+      <WelcomeSection t={t} />
+      <EldersWord t={t} />
+    </Fragment>
+  );
 }

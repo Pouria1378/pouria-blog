@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { languages } from "@/app/i18n/settings";
 import { useRouter } from "next/navigation";
-import { marker as _ } from "react-i18next"
 
 export const HeaderBase = ({ t, lng }) => {
   const [isShowMobileHeader, setisShowMobileHeader] = useState(false);
@@ -44,7 +43,7 @@ export const HeaderBase = ({ t, lng }) => {
       >
         <div className="flex flex-col-reverse md:flex-row m-auto mb-auto z-50">
           {languages.filter(l => l !== lng).map((lng) => (
-            <Link href={`/${lng}`}>
+            <Link key={lng} href={`/${lng}`}>
               {lng === "fa" ? "فارسی" : "English"}
             </Link>
           ))}
