@@ -13,6 +13,9 @@ const config: Config = {
         secondary: "#282C33",
         thirdinary: "#ABB2BF",
       },
+      backgroundImage: {
+        bgProjects: "url('/images/bgProjects.png')",
+      },
     },
   },
   plugins: [],

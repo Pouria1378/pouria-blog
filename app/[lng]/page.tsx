@@ -2,6 +2,7 @@ import WelcomeSection from "@/components/welcomeSection";
 import { useTranslation } from "../i18n";
 import { Fragment } from "react";
 import EldersWord from "@/components/eldersWord";
+import Projects from "@/components/projects";
 
 export default async function Home({
   params: { lng },
@@ -13,6 +14,7 @@ export default async function Home({
     <Fragment>
       <WelcomeSection t={t} />
       <EldersWord t={t} />
+      <Projects t={t} />
     </Fragment>
   );
 }
