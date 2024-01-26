@@ -1,8 +1,13 @@
 "use server";
 import React from "react";
 
+type Skill = {
+  category: string;
+  techs: string[];
+};
+
 const Skills = ({ t }: { t: Function }) => {
-  const skills = [
+  const skills: Skill[] = [
     {
       category: t("Languages"),
       techs: [t("JavaScript"), t("TypeScript")],
@@ -43,14 +48,20 @@ const Skills = ({ t }: { t: Function }) => {
       </div>
       <div className="md:bg-bgSkills bg-repeat-y md:mt-4">
         <div className="flex flex-wrap flex-row mt-4 md:mt-6 md:ml-52">
-          {skills.map(({ category, techs }) => (
-            <div className="flex flex-col border-solid border-thirdinary border bg-secondary md:max-w-56 md:m-2 my-2 w-full md:w-auto">
+          {skills.map(({ category, techs }: Skill) => (
+            <div
+              key={category}
+              className="flex flex-col border-solid border-thirdinary border bg-secondary md:max-w-56 md:m-2 my-2 w-full md:w-auto"
+            >
               <span className="font-semibold p-2 border-solid border-thirdinary border-b-[1px]">
                 {category}
               </span>
               <div className="flex flex-wrap flex-row">
-                {techs.map((tech) => (
-                  <span className="text-thirdinary font-normal px-2 py-1">
+                {techs.map((tech: string) => (
+                  <span
+                    key={tech}
+                    className="text-thirdinary font-normal px-2 py-1"
+                  >
                     {tech}
                   </span>
                 ))}
