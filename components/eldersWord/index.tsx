@@ -6,10 +6,10 @@ const EldersWord = ({ t }: { t: Function }) => {
   return (
     <div className="relative">
       <div className="w-[70px] h-[90px] border-solid border-thirdinary border border-r-0 absolute hidden md:flex md:right-[-80px] lg:right-[-176px] top-24" />
-      <div className="container flex">
+      <div className="md:container flex">
         <div className="flex flex-col m-auto mt-16 text-2xl">
           <div className="relative">
-            <p className="border-solid border-thirdinary border p-8 font-medium">
+            <p className="border-solid border-thirdinary border p-4 md:p-8 font-medium">
               {t("The best way to predict the future is to create it")}
             </p>
             <Image
@@ -21,7 +21,7 @@ const EldersWord = ({ t }: { t: Function }) => {
             />
           </div>
           <div className="flex items-end justify-end relative">
-            <p className="border-solid border-thirdinary border p-4 border-t-0 font-normal">
+            <p className="border-solid border-thirdinary border p-2 md:p-4 border-t-0 font-normal">
               - {t("Peter Drucker")}
             </p>
             <Image

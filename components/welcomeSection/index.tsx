@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const WelcomeSection = ({ t }: { t: Function }) => {
   return (
-    <div className="container z-10 flex flex-col md:flex-row justify-between">
+    <div className="md:container z-10 flex flex-col md:flex-row justify-between">
       <div className="flex flex-col justify-center">
         <h1 className="text-3xl font-semibold ">
           <span>{t("Pouria is a") + " "}</span>

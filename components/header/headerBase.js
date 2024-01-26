@@ -35,7 +35,7 @@ export const HeaderBase = ({ t, lng }) => {
   };
 
   return (
-    <header className="container z-50 bg-secondary sticky top-0 pt-2 md:pt-5 md:pb-2 md:flex md:flex-row md:justify-between">
+    <header className="md:container z-50 bg-secondary sticky top-0 pt-2 md:pt-5 md:pb-2 md:flex md:flex-row md:justify-between">
 
       <nav
         className={`bg-secondary flex fixed md:relative md:bottom-auto md:left-auto md:right-auto md:top-auto md:p-0 bottom-0 left-0 right-0 top-14 px-6 pb-6 pt-4 transform transition-transform duration-500 ease-in-out  md:translate-x-0 ${isShowMobileHeader ? "translate-x-0" : "translate-x-full"
