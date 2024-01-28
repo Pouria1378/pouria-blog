@@ -1,5 +1,6 @@
 "use server";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const AboutMe = ({ t }: { t: Function }) => {
@@ -44,11 +45,26 @@ const AboutMe = ({ t }: { t: Function }) => {
             contribute to your projects or connect over the latest tech trends.`)}
               </div>
             </div>
+            <div className="flex">
+              <Link
+                className="flex flex-row border-solid border-primary border mt-4 px-2 py-1"
+                href={"#"}
+              >
+                <span>{t("Read more")}</span>
+                <Image
+                  src="/images/straitArrowRight.svg"
+                  className="ml-2 mt-1"
+                  alt="arrow right icon"
+                  width={21}
+                  height={21}
+                />
+              </Link>
+            </div>
           </div>
           <Image
             src="/images/aboutMeImg.svg"
             alt="about me"
-            className="m-auto"
+            className="m-auto border-solid border-primary border-b-[1px]"
             width={240}
             height={300}
           />
