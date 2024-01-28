@@ -47,11 +47,11 @@ const Skills = ({ t }: { t: Function }) => {
         <span className="primary-line z-10" />
       </div>
       <div className="md:bg-bgSkills bg-repeat-y md:mt-4">
-        <div className="flex flex-wrap flex-row mt-4 md:mt-6 md:ml-52">
+        <div className="flex flex-wrap flex-row mt-4 md:mt-6 md:ml-52 justify-end">
           {skills.map(({ category, techs }: Skill) => (
             <div
               key={category}
-              className="flex flex-col border-solid border-thirdinary border bg-secondary md:max-w-56 md:m-2 my-2 w-full md:w-auto"
+              className="flex flex-col border-solid border-thirdinary border bg-secondary md:max-w-56 md:ml-2 my-2 w-full md:w-auto"
             >
               <span className="font-semibold p-2 border-solid border-thirdinary border-b-[1px]">
                 {category}

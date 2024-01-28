@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import EldersWord from "@/components/eldersWord";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
+import AboutMe from "@/components/aboutMe";
 
 export default async function Home({
   params: { lng },
@@ -17,6 +18,7 @@ export default async function Home({
       <EldersWord t={t} />
       <Projects t={t} />
       <Skills t={t} />
+      <AboutMe t={t} />
     </Fragment>
   );
 }

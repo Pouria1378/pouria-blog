@@ -73,7 +73,7 @@ export const HeaderBase = ({ t, lng }) => {
 
         <div>
           <button className="relative md:hidden" onClick={toggleMenu}>
-            <div className="relative flex overflow-hidden items-center justify-center w-[50px] h-[50px] transform transition-all duration-200">
+            <div className="relative flex overflow-hidden items-center justify-end md:justify-center w-[50px] h-[50px] transform transition-all duration-200">
               <div className="flex flex-col justify-between w-8 h-5 transform transition-all duration-300 origin-center overflow-hidden">
                 <div
                   className={`bg-white h-[2px] w-7 transform transition-all duration-300 origin-left ${isShowMobileHeader ? "rotate-[42deg]" : ""
