@@ -17,32 +17,35 @@ const AboutMe = ({ t }: { t: Function }) => {
           <span className="primary-line z-10" />
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex flex-col md:mr-36">
+          <div className="flex flex-col">
             <div className="text-thirdinary font-normal">
               <div className="mb-8 mt-6">
                 🚀 {t(`Hi there!`)}
                 <br />
                 👋{" "}
-                {t(`I'm Pouria Seifi, a Front-end Developer with three
-              years of experience.`)}
+                {t(
+                  `I'm Pouria Seifi, a Front-end Developer with three years of experience`
+                )}
               </div>
               <div className="mb-8">
-                💼 {t(`Expertise: `)}
+                💼 {t(`Expertise`)}:
                 <br />
-                {t(`Proficient in HTML5, CSS3,
-            JavaScript, and frameworks like React.js, Next.js, and Angular.`)}
+                {t(
+                  `Proficient in HTML5, CSS3, JavaScript, and frameworks like React js, Next js, and Angular`
+                )}
               </div>
               <div className="mb-8">
-                📚 {t(`Continuous Learner:`)}
+                📚 {t(`Continuous Learner`)}:
                 <br />
-                {t(`Committed to staying ahead, I embrace new
-            technologies to bring the latest innovations to my work.`)}
+                {t(
+                  `Committed to staying ahead, I embrace new technologies to bring the latest innovations to my work`
+                )}
               </div>
               <div className="mb-8">
                 🤝{" "}
-                {t(`Open to
-            exciting opportunities and collaborations! Let's discuss how I can
-            contribute to your projects or connect over the latest tech trends.`)}
+                {t(
+                  `Open to exciting opportunities and collaborations! Let's discuss how I can contribute to your projects or connect over the latest tech trends`
+                )}
               </div>
             </div>
             <div className="flex">
@@ -64,7 +67,7 @@ const AboutMe = ({ t }: { t: Function }) => {
           <Image
             src="/images/aboutMeImg.svg"
             alt="about me"
-            className="m-auto border-solid border-primary border-b-[1px]"
+            className="m-auto border-solid border-primary border-b-[1px] md:mr-14 md:ml-14"
             width={240}
             height={300}
           />

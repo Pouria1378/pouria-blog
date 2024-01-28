@@ -68,7 +68,7 @@ export const HeaderBase = ({ t, lng }) => {
             width={24}
             height={24}
           />
-          <span className="text-white text-lg font-bold ml-2">Pouria</span>
+          <span className="text-white text-lg font-bold ml-2 mr-2">Pouria</span>
         </div>
 
         <div>

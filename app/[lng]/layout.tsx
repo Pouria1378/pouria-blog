@@ -4,6 +4,7 @@ import { Header } from "@/components/header/client";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 import { useTranslation } from "../i18n";
+import Footer from "@/components/footer";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -29,7 +30,7 @@ export default async function RootLayout({
       <body>
         <Header lng={lng} />
         {children}
-        {/* <Footer lng={lng} /> */}
+        <Footer t={t} />
       </body>
     </html>
   );

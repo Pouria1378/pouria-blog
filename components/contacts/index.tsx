@@ -18,7 +18,7 @@ const Contacts = ({ t }: { t: Function }) => {
         <div className="flex flex-col md:flex-row md:justify-between mt-4 md:mt-11">
           <p className="text-thirdinary font-medium max-w-96 mb-4 md:mb-0">
             {t(
-              "I’m interested in relocation and remote jobs. However, if you have other request or question, don’t hesitate to contact me."
+              "I’m interested in relocation and remote jobs However, if you have other request or question, don’t hesitate to contact me"
             )}
           </p>
           <div className="border-solid border-thirdinary border p-4">
