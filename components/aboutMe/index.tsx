@@ -7,7 +7,7 @@ const AboutMe = ({ t }: { t: Function }) => {
   return (
     <div className="relative">
       <div className="w-[70px] h-[160px] border-solid border-thirdinary border border-l-0 absolute hidden md:flex md:left-[-80px] lg:left-[-176px] top-32" />
-      <div className="w-[90px] h-[160px] bg-bgAboutMeDots bg-no-repeat absolute hidden md:flex md:right-[-80px] lg:right-[-176px] top-60" />
+      <div className="w-[90px] h-[160px] bg-bgDots bg-no-repeat absolute hidden md:flex md:right-[-80px] lg:right-[-176px] top-60" />
       <section className="flex flex-col mt-20 mb-14">
         <div className="flex justify-between relative">
           <div className="text-3xl font-medium bg-secondary z-20">

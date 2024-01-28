@@ -16,7 +16,7 @@ const config: Config = {
       backgroundImage: {
         bgProjects: "url('/images/bgProjects.png')",
         bgSkills: "url('/images/bgSkills.svg')",
-        bgAboutMeDots: "url('/images/aboutMeDots.svg')",
+        bgDots: "url('/images/dots.svg')",
       },
     },
   },
