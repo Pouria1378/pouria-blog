@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { languages } from "@/app/i18n/settings";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export const HeaderBase = ({ t, lng }) => {
   const [isShowMobileHeader, setisShowMobileHeader] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  let pathnameWithoutLocale;
 
   const links = [
     {
@@ -30,8 +32,17 @@ export const HeaderBase = ({ t, lng }) => {
 
   const toggleMenu = () => setisShowMobileHeader((prev) => !prev);
 
-  const changeLng = (event) => {
-    router.push(`/${event.target.value}`);
+  // const changeLng = (event) => {
+  //   router.push(`/${event.target.value}`);
+  // };
+
+  const isLinkActive = (to) => {
+    languages.map(lng => {
+      if (pathname.includes("/" + lng)) {
+        pathnameWithoutLocale = pathname.replace("/" + lng, "") || "/"
+      }
+    })
+    return pathnameWithoutLocale === to
   };
 
   return (
@@ -51,7 +62,7 @@ export const HeaderBase = ({ t, lng }) => {
             <Link
               key={text}
               href={to}
-              className="mb-8 md:mb-auto md:mr-4 md:ml-4 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary"
+              className={`mb-8 md:mb-auto md:mr-4 md:ml-4 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary ${isLinkActive(to) ? "font-medium text-white" : ""}`}
             >
               <span className="text-primary">#</span>
               {text}
