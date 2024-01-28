@@ -3,13 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { languages } from "@/app/i18n/settings";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export const HeaderBase = ({ t, lng }) => {
   const [isShowMobileHeader, setisShowMobileHeader] = useState(false);
-  const router = useRouter();
   const pathname = usePathname();
-  let pathnameWithoutLocale;
 
   const links = [
     {
@@ -36,13 +34,19 @@ export const HeaderBase = ({ t, lng }) => {
   //   router.push(`/${event.target.value}`);
   // };
 
-  const isLinkActive = (to) => {
+  const getPathnameWithoutLocale = () => {
+    let pathnameWithoutLocale;
     languages.map(lng => {
       if (pathname.includes("/" + lng)) {
         pathnameWithoutLocale = pathname.replace("/" + lng, "") || "/"
       }
     })
-    return pathnameWithoutLocale === to
+    return pathnameWithoutLocale
+  }
+
+  const isLinkActive = (to) => {
+
+    return getPathnameWithoutLocale() === to
   };
 
   return (
@@ -54,14 +58,14 @@ export const HeaderBase = ({ t, lng }) => {
       >
         <div className="flex flex-col-reverse md:flex-row m-auto mb-auto z-50">
           {languages.filter(l => l !== lng).map((lng) => (
-            <Link key={lng} href={`/${lng}`}>
+            <Link key={lng} href={`/${lng}/${getPathnameWithoutLocale()}`}>
               {lng === "fa" ? "فارسی" : "English"}
             </Link>
           ))}
           {links.map(({ text, to }) => (
             <Link
               key={text}
-              href={to}
+              href={"/" + lng + to}
               className={`mb-8 md:mb-auto md:mr-4 md:ml-4 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary ${isLinkActive(to) ? "font-medium text-white" : ""}`}
             >
               <span className="text-primary">#</span>

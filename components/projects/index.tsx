@@ -13,13 +13,7 @@ const Projects = ({ t }: { t: Function }) => {
     },
     {
       name: t("Pinterest Crawler"),
-      skills: [
-        t("React"),
-        t("Express"),
-        t("SeleniumWebdriver"),
-        t("Express"),
-        t("Mongo DB"),
-      ],
+      skills: [t("React"), t("Express"), t("SeleniumWebdriver"), t("Mongo DB")],
       description: t("crawl a user page and save all images"),
       link: "/pinterestCrawler",
     },
@@ -51,7 +45,7 @@ const Projects = ({ t }: { t: Function }) => {
       </div>
       <div className="border-solid border-thirdinary border border-l-0 border-r-0 flex flex-wrap py-2">
         {skills.map((skill: string) => (
-          <span className="text-thirdinary font-normal mx-2" key={skill}>
+          <span className="text-thirdinary font-normal mx-2" key={link + skill}>
             {skill}
           </span>
         ))}
@@ -118,7 +112,7 @@ const Projects = ({ t }: { t: Function }) => {
               link: string;
             }) => (
               <ProjectCard
-                key={name}
+                key={name + link}
                 name={name}
                 skills={skills}
                 description={description}
