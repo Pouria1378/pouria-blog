@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Pouria Blog",
+  title: "Pouria Blog E24ZY36",
   description: "pouria personal blog.",
 };
 

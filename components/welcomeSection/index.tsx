@@ -13,7 +13,8 @@ const WelcomeSection = ({ t }: { t: Function }) => {
         <p className="text-thirdinary font-normal mt-4 mb-6">
           {t(
             "He crafts responsive websites where technologies meet creativity"
-          )}
+          )}{" "}
+          E24ZY36
         </p>
         <div>
           <button className="border border-primary px-4 py-2">
