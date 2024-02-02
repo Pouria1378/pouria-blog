@@ -66,6 +66,7 @@ export const HeaderBase = ({ t, lng }) => {
             <Link
               key={text}
               href={"/" + lng + to}
+              onClick={toggleMenu}
               className={`mb-8 md:mb-auto md:mr-4 md:ml-4 whitespace-nowrap w-auto text-3xl md:text-base text-thirdinary ${isLinkActive(to) ? "font-medium text-white" : ""}`}
             >
               <span className="text-primary">#</span>
