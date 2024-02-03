@@ -11,6 +11,7 @@
     "test": ""
   },
   "dependencies": {
+    "@next/third-parties": "^14.1.0",
     "accept-language": "^3.0.18",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-resources-to-backend": "^1.2.0",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "../globals.css";
 import { Header } from "@/components/header/client";
 import { dir } from "i18next";
@@ -27,6 +28,7 @@ export default async function RootLayout({
   const { t } = await useTranslation(lng);
   return (
     <html lang={lng} dir={dir(lng)} className="px-4 md:px-20 lg:px-44">
+      <GoogleAnalytics gaId="G-6J86TGZXCT" />
       <body>
         <Header lng={lng} />
         {children}
