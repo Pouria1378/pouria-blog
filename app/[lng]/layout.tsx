@@ -11,8 +11,8 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Pouria Blog E24ZY36",
-  description: "pouria personal blog.",
+  title: "Pouria Seifi Blog",
+  description: "this blog is pouria seifi personal blog",
 };
 
 export default async function RootLayout({
