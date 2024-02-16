@@ -25,6 +25,8 @@ jobs:
     - name: Stop
       run: |
         echo "$PASSWORD" | sudo -S docker kill pouria_pouria-blog_1
+      env:
+        PASSWORD: ${{ secrets.POURIA_USER_PASSWORD }}
     - name: Start
       run: |
         echo "$PASSWORD" | sudo -S docker-compose up -d --build
