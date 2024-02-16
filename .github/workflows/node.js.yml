@@ -22,9 +22,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - name: Stop and Restart Container
+    - name: Stop
       run: |
         echo "$PASSWORD" | sudo -S docker kill pouria_pouria-blog_1
+    - name: Start
       run: |
         echo "$PASSWORD" | sudo -S docker-compose up -d
       env:
