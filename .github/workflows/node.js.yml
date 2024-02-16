@@ -25,5 +25,7 @@ jobs:
     - name: Stop and Restart Container
       run: |
         echo "$PASSWORD" | sudo -S docker kill pouria_pouria-blog_1
+      run: |
+        echo "$PASSWORD" | sudo -S docker-compose up -d
       env:
         PASSWORD: ${{ secrets.POURIA_USER_PASSWORD }}
