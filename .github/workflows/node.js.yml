@@ -24,4 +24,4 @@ jobs:
     - run: npm run build --if-present
     - name: Change Directory
       run: cd /home/pouria/actions-runner/_work/pouria-blog/pouria-blog 
-    - run: pm2 start npm —name “pouria-blog” — start —watch
+    - run: pm2 start npm --name “pouria-blog” - start -watch
